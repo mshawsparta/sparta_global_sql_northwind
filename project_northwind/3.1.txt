@@ -1,0 +1,3 @@
+SELECT AVG(DATEDIFF(day, OrderDate, ShippedDate)) AS "shipping time",  MONTH(ShippedDate) as "Monthly Avarage" from [orders]
+GROUP BY MONTH(ShippedDate)
+ORDER BY "shipping time"

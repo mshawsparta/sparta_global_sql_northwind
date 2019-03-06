@@ -1,0 +1,11 @@
+select r. RegionDescription, Format((SUM(unitPrice)* SUM(quantity), 'N', "en-us") AS "Total Sales"
+From [order details] od
+inner join orders o
+on od.orderID = o.orderID
+Inner JOIN EmployeTerrortories et
+ON o.EmployeeID = et.EmployeeID
+inner join TerrortoriesID = t.TerrortoyID
+Inner Join region r
+on t.regionID = r.regionID
+Group BY od.orderID, r.Regiondescription
+Order By "Total Sales"
